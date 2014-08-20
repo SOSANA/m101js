@@ -10,7 +10,7 @@
   "preview": {
         "Project Index (static)": "https://{sauqui-lipoma.codio.io}}/{{index}}",
         "Current File (static)": "https://{{sauqui-lipoma.codio.io}}/{{filepath}}",
-        "Box URL": "http://{{sauqui-lipoma.codio.io}}:3000/",
+        "Box URL": "http://{{sauqui-lipoma.codio.io}}:8080/",
         "Box URL SSL": "https://{{sauqui-lipoma.codio.io}}:9500/"
   }
 }
