@@ -1,0 +1,16 @@
+{
+// Configure your Run and Preview buttons here.
+
+// Run button configuration
+  "commands": {
+        "Node version": "node --version"
+  },
+
+// Preview button configuration
+  "preview": {
+        "Project Index (static)": "https://{sauqui-lipoma.codio.io}}/{{index}}",
+        "Current File (static)": "https://{{sauqui-lipoma.codio.io}}/{{filepath}}",
+        "Box URL": "http://{{sauqui-lipoma.codio.io}}:8080/",
+        "Box URL SSL": "https://{{sauqui-lipoma.codio.io}}:9500/"
+  }
+}
