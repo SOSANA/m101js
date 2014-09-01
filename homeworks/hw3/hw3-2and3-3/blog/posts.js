@@ -30,7 +30,14 @@ function PostsDAO(db) {
 
         // now insert the post
         // hw3.2 TODO
-        callback(Error("insertEntry NYI"), null);
+        posts.insert(post, function(err, result){
+        	"use strict";
+            
+            if (err) return callback(err, null);
+            
+        	console.log("Inserted new post");
+        	callback(err, permalink);
+        });
     }
 
     this.getPosts = function(num, callback) {
@@ -56,7 +63,6 @@ function PostsDAO(db) {
             if (err) return callback(err, null);
 
             console.log("Found " + items.length + " posts");
-
             callback(err, items);
         });
     }
@@ -82,7 +88,14 @@ function PostsDAO(db) {
         }
 
         // hw3.3 TODO
-        callback(Error("addComment NYI"), null);
+        //callback(Error("addComment NYI"), null);
+        posts.update({ 'permalink': permalink }, { '$push': { 'comments': comment }}, function(err, numModified){
+           "use strict";
+            
+            if (err) return callback(err, null);
+            
+            callback(err, numModified);
+        });  
     }
 }
 

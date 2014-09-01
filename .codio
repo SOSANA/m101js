@@ -8,9 +8,9 @@
 
 // Preview button configuration
   "preview": {
-        "Project Index (static)": "https://{sauqui-lipoma.codio.io}}/{{index}}",
-        "Current File (static)": "https://{{sauqui-lipoma.codio.io}}/{{filepath}}",
-        "Box URL": "http://{{sauqui-lipoma.codio.io}}:8080/",
-        "Box URL SSL": "https://{{sauqui-lipoma.codio.io}}:9500/"
+        "Project Index (static)": "https://{herman-oscar.codio.io}}/{{index}}",
+        "Current File (static)": "https://{{herman-oscar.codio.io}}/{{filepath}}",
+        "Box URL": "http://{{herman-oscar.codio.io}}:3000/",
+        "Box URL SSL": "https://{{herman-oscar.codio.io}}:9500/"
   }
 }
