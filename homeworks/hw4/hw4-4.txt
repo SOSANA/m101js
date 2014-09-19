@@ -11,3 +11,5 @@ What is the latency of the longest running operation to the collection, in milli
 - 5018
 + 15820
 - 3217
+
+db.profile.find({ns:/school2.students/}).sort({millis : -1}).limit(1).pretty()
