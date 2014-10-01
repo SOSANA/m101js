@@ -1,6 +1,6 @@
-var MongoClient = require('mongodb').MongoClient;
-MongoClient.connect('mongodb://localhost:27017/agg', function(err, db) {
-
+// in your terminal run the following
+// $ mongo < agg.js 
+use agg
 db.products.drop()
 
 db.products.insert({'name':'iPad 16GB Wifi', 'manufacturer':"Apple", 
@@ -33,5 +33,3 @@ db.products.insert({'name':'Kindle Paper White', 'category':'Tablets',
 db.products.insert({'name':'Kindle Fire', 'category':'Tablets', 
 		    'manufacturer':"Amazon", 
 		    'price':199.00})
-
-});
