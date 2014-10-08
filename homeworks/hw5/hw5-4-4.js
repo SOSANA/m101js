@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://localhost:27017/zips', function(err, db) {
+MongoClient.connect('mongodb://localhost:27017/agg', function(err, db) {
     if(err) throw err;
 
     db.collection('zips', function(err, collection) {
@@ -18,8 +18,8 @@ MongoClient.connect('mongodb://localhost:27017/zips', function(err, db) {
         ],
         function(err, items){
             if(err) throw err;
-            console.log(items);
-            return db.close();
+            console.log(items);   
         });
+        //return db.close();
     });
 });

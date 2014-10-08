@@ -3,10 +3,9 @@
 use blog;
 db.posts.aggregate([
     /* unwind by comments */
-    {$unwind:"$comments"},
+    {$unwind: "$comments"},
     /* group by author counting comments */
-    {$group: {_id:"$comments.author", count:{$sum:1}}},
+    {$group: {_id:"$comments.author", num_comments: {$sum:1}}},
      /* sort by count */
-    {$sort:{count:-1}},{$limit:5},
-    {$project : {_id:0, 'author':'$_id', 'count':1}}
+    {$sort:{num_comments:-1}},{$limit:1}
 ])

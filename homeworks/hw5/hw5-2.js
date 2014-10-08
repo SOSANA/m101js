@@ -2,24 +2,30 @@
 // $ mongo < hw5-2.js 
 use zips;
 db.zips.aggregate([
-    {$match: 
+    // match CA and NY
+    {"$match":
+       {
+           state: {$in: ['CA', 'NY']}
+       } 
+    },
+    // group by state and city
+    {$group:
      {
-         state: {$in: ['CA','NY']}
+         _id:{state:"$state", city:"$city"},
+         pop:{$sum:"$pop"}
      }
     },
-    {$group: 
-     {
-         _id: {state:"$state",city:"$city"}, 
-         pop: {$sum: "$pop"}}},
-    {$match: 
-     {
-         pop: {$gt:25000}
-     }
+    // only look at cities over 25000
+    {$match:
+        {
+            pop: {$gt:25000}
+        }
     },
-    {$group: 
-     {
-         _id:null, 
-         avg_pop:{$avg:"$pop"}
-     }
+    // get the average population across those cities
+    {$group:
+        {
+            _id:null,
+            avg_pop:{$avg:"$pop"}
+        }
     }
 ])

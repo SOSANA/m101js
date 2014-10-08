@@ -19,8 +19,8 @@ MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
         function(err, items){
             if(err) throw err;
             console.log(items);    
-             return db.close();
+            //return db.close();
         });
-       
+        
     });
 });
